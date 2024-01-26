@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Practise</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="select_the_photo_sourse_n_you_want">Select the photo sourse\n you want</string>
+    <string name="choose_an_action">Choose an action</string>
+    <string name="region_location">Where do you want to go?</string>
+    <string name="customize_profile">Customize Profile</string>
+    <string name="region">Region</string>
+    <string name="select_country_prompt">Select a Country</string>
+</resources>

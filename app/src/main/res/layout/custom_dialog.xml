@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_gravity="center"
+    android:background="#FFFF"
+    android:padding="16dp"
+    android:layout_marginBottom="20dp">
+
+    <ImageView
+        android:id="@+id/iv_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/close"
+        android:contentDescription="@null"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Выберите действие"
+        android:textColor="@color/black"
+        android:layout_marginTop="16dp"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_below="@id/iv_cancel"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_subTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="выберите источник фотографии, \nкоторый вы хотите"
+        android:textColor="#A59C9C"
+        android:textSize="14sp"
+        android:layout_below="@id/tv_title"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
+
+    <Button
+        android:id="@+id/btn_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/stateDisabled"
+        app:cornerRadius="12dp"
+        android:text="Галерея"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:layout_below="@id/tv_subTitle"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+    <Button
+        android:id="@+id/btn_camera"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/stateDisabled"
+        android:text="Камера"
+        app:cornerRadius="12dp"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:layout_below="@id/btn_gallery"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+</RelativeLayout>
