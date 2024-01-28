@@ -104,14 +104,16 @@
             android:textSize="16sp"
             android:textStyle="bold" />
 
-        <Spinner
+        <Button
             android:id="@+id/et_region"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="12dp"
+            android:text="Откуда вы?"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
             android:background="@drawable/background_shape"
             android:paddingHorizontal="16dp"
-            android:prompt="@string/select_country_prompt"
             android:textSize="16sp" />
     </LinearLayout>
 

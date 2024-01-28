@@ -7,9 +7,9 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
-import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import uz.eloving.practise.databinding.ActivityMainBinding
 
@@ -24,20 +24,10 @@ class MainActivity : AppCompatActivity() {
 
     private val dialog by lazy { MyDialog() }
     private val mySharedPreferences by lazy { MySharedPreferences(this) }
-
+    val bottomSheet = BottomSheet()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        val countries = listOf(
-            mySharedPreferences.country,
-            "America",
-            "Russian",
-            "Pakistan",
-            "India",
-            "Dubai",
-            "Uzbekistan"
-        )
 
         val resultLauncher =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
@@ -73,9 +63,9 @@ class MainActivity : AppCompatActivity() {
             resultLauncher.launch(galleryIntent)
         }
 
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, countries)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        binding.etRegion.adapter = adapter
+        binding.etRegion.setOnClickListener {
+            bottomSheet.show(supportFragmentManager, bottomSheet.tag)
+        }
 
         binding.etName.setText(mySharedPreferences.name)
         binding.etSurname.setText(mySharedPreferences.surname)
@@ -84,7 +74,6 @@ class MainActivity : AppCompatActivity() {
         binding.btnSave.setOnClickListener {
             mySharedPreferences.name = binding.etName.text.toString()
             mySharedPreferences.surname = binding.etSurname.text.toString()
-            mySharedPreferences.country = binding.etRegion.selectedItem.toString()
             Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show()
         }
         binding.toolbar.backArrow.setOnClickListener {
